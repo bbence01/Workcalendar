@@ -1,0 +1,118 @@
+<div *ngIf='IsLoggedIn()'>
+  <p>Your role is: {{ userRole }}</p>
+</div>
+
+
+
+
+<div class="card-body">
+
+  <dx-button
+    stylingMode="contained"
+    text="Calendar"
+    type="normal"
+    [width]="120"
+    [routerLink]="['/calendar']"
+  >
+  </dx-button>
+
+  <dx-button
+    stylingMode="contained"
+    text="Statistics"
+    type="normal"
+    [width]="120"
+    [routerLink]="['/statistics']"
+  >
+  </dx-button>
+
+  <dx-button
+    *ngIf="IsAdmin()"
+    stylingMode="contained"
+    text="Pictures"
+    type="normal"
+    [width]="120"
+    [routerLink]="['/pictures']"
+  >
+  </dx-button>
+
+  <dx-button
+    stylingMode="contained"
+    text="Daily events"
+    type="normal"
+    [width]="120"
+    [routerLink]="['/dailyevents']"
+  >
+  </dx-button>
+
+  <dx-button
+    stylingMode="contained"
+    text="Log in"
+    type="success"
+    [width]="120"
+    *ngIf='!IsLoggedIn()'
+    [routerLink]="['/account']"
+  >
+  </dx-button>
+</div>
+<br>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">
+            {{ '::Welcome_Title' | abpLocalization }} this is the WorkCal team's project
+        </h5>
+    </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Levente</td>
+          <td>Kiss</td>
+          <td>Product Owner</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Gergő</td>
+          <td>Csizmadia</td>
+          <td>Architect</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Bence</td>
+          <td>Bognár</td>
+          <td>Full Stack</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Márton Bendegúz</td>
+          <td>Juhász</td>
+          <td>Full Stack</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Márk</td>
+          <td>Varga</td>
+          <td>Full Stack</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Bence</td>
+          <td>Sörös</td>
+          <td>Scrum Master</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
